@@ -15,7 +15,13 @@ const InputBlock = styled.input`
 
 const Input = ({data, handleChange}: IInput) => {
     return (
-        <InputBlock value={data} type="text" maxLength={1} onInput={(e) => handleChange(e.currentTarget.value)} />
+        <InputBlock
+            value={data}
+            type="text"
+            maxLength={1}
+            placeholder="Input something"
+            onInput={(e) => handleChange(e.currentTarget.value)}
+        />
     )
 }
 

@@ -3,6 +3,7 @@ import {observer} from 'mobx-react-lite';
 import words from 'an-array-of-english-words';
 import dictionary from "./store/Dictionary";
 import Input from "./components/Input";
+import MyChart from './components/Charts';
 import styled from '@emotion/styled';
 
 const AppDictionary = styled.div`
@@ -73,6 +74,7 @@ const App = observer(() => {
           stringEnd(str.toLowerCase());
           findInAll(str.toLowerCase());
           findDouble(str.toLowerCase());
+          dictionary.getAll(words)
       }
   }
 
@@ -86,6 +88,7 @@ const App = observer(() => {
         <p>{`${dictionary.inAll.length} times the letter ${string} appear in the dictionary`}</p>
         <p>{`${dictionary.doubleLetter.length} words have the same letter repeated in conjunction`}</p>
       </InputBlock>
+        <MyChart data={words} />
     </AppDictionary>
   );
 });

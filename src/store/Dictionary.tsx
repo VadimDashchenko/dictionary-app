@@ -6,6 +6,7 @@ class Dictionary {
      startString: any[] = [];
      inAll: any[] = [];
      doubleLetter: any[] = [];
+     allWords: any[] = []
 
     constructor(){
         makeAutoObservable(this)
@@ -36,6 +37,11 @@ class Dictionary {
         this.endString = [];
         this.inAll = [];
         this.doubleLetter = [];
+        this.allWords = [];
+    }
+
+    getAll(data: any[]) {
+        this.allWords = this.allWords.concat(data);
     }
 }
 
